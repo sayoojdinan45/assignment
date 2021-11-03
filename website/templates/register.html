@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+<html lang="en">
+    <head>
+        <script type=""></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+        <title>Document</title>
+    </head>
+<body>
+    {% for msg in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>Hey!</strong>{{ msg }}
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+    <form action="{% url 'website:register' %}" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table style="margin-left: 750px; margin-top: 150px; color: crimson;">
+
+
+    <tr>
+        <td>
+            {{ form.as_table }}
+        </td>
+    </tr>
+</table>
+<input type="submit" value="Signup" style="color: chartreuse; margin-left: 750px;">
+    </form>
+    
+
+
+</body>
+</html>
+{% endblock %}

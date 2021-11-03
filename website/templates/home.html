@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <h1>THIS IS YOUR PROFILE {{ user.Name}}</h1> <br>
+    
+    <img src="{{ user.Pic.url }}" alt="" style="height: 300px; width: 300px;"> <br>
+    <a href="{% url 'website:update' user.id %}" style="text-decoration: none;">Update</a> <br>
+    <a href="{% url 'website:changePass' user.id %}" style="text-decoration: none;">Changepass</a> <br>
+    <a href="{% url 'website:logout' %}" style="text-decoration: none;">Logout</a>
+</body>
+</html>
